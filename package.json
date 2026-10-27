@@ -8,5 +8,8 @@
   },
   "author": "Matheus Santos",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
 }

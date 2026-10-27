@@ -8,3 +8,7 @@ npm init -y (criar todos as opções de configuração confirmadas)
 
 Criar o packege.lock.json
 npm install 
+
+
+Instalar as dependências do framework Express 
+npm install express

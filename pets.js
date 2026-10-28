@@ -20,6 +20,8 @@ const pets = [ //Vetores de objetos [Arrays]
   },
 ];
 
+export default pets;
+
 /*const pet1 = { // Objetos
   
   nome: "Alfredo",
@@ -41,3 +43,5 @@ const pet3 = {
   idade: 5,
   vacinado: true,
 };*/
+
+

@@ -11,7 +11,7 @@ app.get("/", (requisicao, resposta) => {
 app.listen(port, () => console.log(`Servidor rodando com sucesso ${port}`));
 
 app.get("/:nome", (requisicao, resposta) => {
-  const nomeInformado = requisicao.params.nome;
+  const nomeInformado = requisicao.params.nome.toLowerCase();
   const pet = pets.find((infopet) => infopet.nome === nomeInformado);
 
   resposta.send(pet);

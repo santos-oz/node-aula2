@@ -1,22 +1,23 @@
-const pets = [ //Vetores de objetos [Arrays]
-  
+const pets = [
+  //Vetores de objetos [Arrays]
+
   {
     id: 1,
-    nome: "Alfredo",
+    nome: "alfredo",
     tutor: "Matheus Santos",
     idade: 3,
     vacinado: true,
   },
   {
     id: 2,
-    nome: "Luna",
+    nome: "luna",
     tutor: "Carlos Silva",
     idade: 8,
     vacinado: false,
   },
   {
     id: 3,
-    nome: "Bob",
+    nome: "bob",
     tutor: "Ana Souza",
     idade: 5,
     vacinado: true,

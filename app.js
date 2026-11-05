@@ -24,7 +24,7 @@ app.get("/:nome", (requisicao, resposta) => {
 app.put("/:nome", (req, res) => {
   const nomeInformado = req.params.nome.toLowerCase();
   const nomeSelecionado = pets.find((pet) => pet.nome === nomeInformado);
-  
+
   if (!nomeInformado) {
     res.status(404).send("Não existe o Pet informado."); // se o pet não for encontrado, retorna um erro 404
     return;
@@ -41,14 +41,19 @@ app.put("/:nome", (req, res) => {
 app.post("/", (req, res) => {
   const novoPet = req.body;
   pets.push(novoPet);
-  res.status(200).send(novoPet);
+  res.status(201).send(novoPet);
 });
 
 app.delete("/:nome", (req, res) => {
   const nomeInformado = req.params.nome.toLowerCase();
   const indicePetSelecionado = pets.findIndex(
-    (pet) => pet.nome === nomeInformado
-  )
+    (pet) => pet.nome === nomeInformado, 
+  );
+
+  if (indicePetSelecionado === -1) {
+    res.status(404),send("Não existe o Pet informado."); // ele vai excluir o
+    return;
+  }
   const petRemovido = pets.splice(indicePetSelecionado, 1);
   res.status(200).send(petRemovido);
 });

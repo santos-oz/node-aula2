@@ -2,7 +2,7 @@ import express from "express";
 import pets from "./pets.js";
 
 const app = express();
-app.use(express.json());
+app.use(express.json()); // Configuração para permitir o envio de dados no formato JSON 
 const port = 3000;
 
 app.get("/", (requisicao, resposta) => {
@@ -24,6 +24,13 @@ app.get("/:nome", (requisicao, resposta) => {
 app.put("/:nome", (req, res) => {
   const nomeInformado = req.params.nome.toLowerCase();
   const nomeSelecionado = pets.find((pet) => pet.nome === nomeInformado);
+  
+  if (!nomeInformado) {
+    res.status(404).send("Não existe o Pet informado."); // se o pet não for encontrado, retorna um erro 404
+    return;
+  }
+
+
   const campos = Object.keys(req.body);
 
   for (let campo of campos){
